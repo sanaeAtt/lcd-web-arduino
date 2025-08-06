@@ -28,15 +28,17 @@ It’s perfect for small displays, IoT dashboards, or just a fun learning projec
 
 ## 🛠 Project Structure
 
+```text
 lcd-web-arduino/
 ├── arduino/
-│ └── lcd_display.ino # Arduino sketch for LCD scrolling
+│   └── lcd_display.ino        # Arduino sketch for LCD scrolling
 ├── static/
-│ └── index.html # Web interface
-├── server.py # Flask backend for serial messaging
-├── requirements.txt # Python dependencies
+│   └── index.html             # Web interface
+├── server.py                  # Flask backend for serial messaging
+├── requirements.txt           # Python dependencies
 ├── .gitignore
-└── README.md # This file
+└── README.md                  # This file
+```
 
 ---
 
@@ -76,28 +78,32 @@ lcd-web-arduino/
 
 In your terminal (PowerShell or Bash):
 
-```bash
+
 # Clone the repository
+```bash
 git clone https://github.com/sanaeAtt/lcd-web-arduino.git
 cd lcd-web-arduino
-
+```
 # Create a virtual environment (optional but recommended)
 ```bash
     python -m venv .venv
     .\.venv\Scripts\activate  # On Windows
-# source .venv/bin/activate  # On macOS/Linux
+    # source .venv/bin/activate  # On macOS/Linux
+```
 
 # Install required packages
 ```bash
   pip install -r requirements.txt
-
+```
 # Run the Flask server
+```bash
 python server.py
-
+```
 📌 Make sure the Arduino is connected to the correct COM port. Update this line in server.py if necessary:
 
 ```bash
-    arduino = serial.Serial('COM3', 9600)
+arduino = serial.Serial('COM3', 9600)
+```
 
 Use mode (on Windows) or check the Arduino IDE to find the right port.
 
@@ -109,7 +115,7 @@ After running the Flask server, open your browser and go to:
 
 ```bash
  http://localhost:5000
-
+```
 From there:
 
 - Type your message (max 32 characters)
@@ -126,12 +132,12 @@ To share your interface over the internet:
 
 ```bash
 ngrok http 5000
-
+```
 You’ll get a public URL like:
 
 ```bash
 https://abcd1234.ngrok-free.app
-
+```
 Open this link on any device and send messages to your Arduino!
 
 # 📜 License
